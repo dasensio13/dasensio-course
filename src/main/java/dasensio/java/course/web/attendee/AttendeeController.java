@@ -30,7 +30,7 @@ public class AttendeeController {
 	@RequestMapping(method = RequestMethod.POST)
 	public String create(@ModelAttribute("attendeeForm") @Valid final Attendee attendee, final BindingResult result,
 			final Model model) {
-		// TODO: validate entity here, show errors in form and delete @Valid
+		// TODO validate entity here, show errors in form and delete @Valid
 		attendeeService.create(attendee);
 		return findAll(model);
 	}

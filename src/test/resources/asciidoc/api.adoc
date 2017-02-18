@@ -1,0 +1,27 @@
+= API REST Documentation
+David Asensio;
+:doctype: book
+:toc: left
+:toclevels: 4
+:source-highlighter: highlightjs
+
+== Attendee create example
+=== request
+include::{snippets}/attendee-create-example/http-request.adoc[]
+include::{snippets}/attendee-create-example/request-fields.adoc[]
+=== response
+include::{snippets}/attendee-create-example/http-response.adoc[]
+
+== Attendee list example
+=== request
+include::{snippets}/attendee-list-example/http-request.adoc[]
+=== response
+include::{snippets}/attendee-list-example/http-response.adoc[]
+include::{snippets}/attendee-list-example/response-fields.adoc[]
+
+== Error example
+=== request
+include::{snippets}/error-example/http-request.adoc[]
+=== response
+include::{snippets}/error-example/http-response.adoc[]
+include::{snippets}/error-example/response-fields.adoc[]

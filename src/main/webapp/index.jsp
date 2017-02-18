@@ -10,8 +10,6 @@
 		integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD"
 		crossorigin="anonymous">
 
-
-
 	<link rel="stylesheet" href="course.css">
 </head>
 
@@ -19,6 +17,10 @@
 	<div class="header">
 		<div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
 			<a class="pure-menu-heading" href="#">Course Attendees</a>
+			<ul class="pure-menu-list">
+				<li class="pure-menu-item"><a href="docs/api.html" class="pure-menu-link">API</a></li>
+	            <li class="pure-menu-item"><a href="logout" class="pure-menu-link">Logout</a></li>
+	        </ul>
 		</div>
 	</div>
 

@@ -35,7 +35,7 @@ public class AttendeeRestController {
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-	// TODO: PATCH + company as second parameter
+	// TODO PATCH + company as second parameter
 	@ResponseStatus(HttpStatus.OK)
 	public void update(@PathVariable("id") final long id, @RequestBody @Valid final Attendee attendee) {
 		attendeeService.updateCompany(id, attendee.getCompany());

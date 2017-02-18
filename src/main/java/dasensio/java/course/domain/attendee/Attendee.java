@@ -30,6 +30,7 @@ public class Attendee implements Serializable {
 
 	@Column(name = "COMPANY")
 	private String company;
+	// TODO Company entity
 
 	public String getName() {
 		return name;

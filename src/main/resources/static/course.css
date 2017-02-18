@@ -99,6 +99,25 @@ a.pure-button-primary {
     font-size: 120%;
 }
 
+.home-menu .pure-menu-selected a {
+    color: white;
+}
+
+.home-menu a {
+    color: #6FBEF3;
+}
+
+.home-menu ul {
+    float: right;
+}
+
+.home-menu li a:hover,
+.home-menu li a:focus {
+    background: none;
+    border: none;
+    color: #AECFE5;
+}
+
 /*
  * -- CONTENT STYLES --
  * This represents the content area (everything below the blue section)

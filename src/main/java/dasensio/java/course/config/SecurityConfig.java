@@ -13,7 +13,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	public void configureGlobal(final AuthenticationManagerBuilder auth) throws Exception {
-		// TODO: make this better
+		// TODO improve
 		auth.inMemoryAuthentication().withUser("user").password("password").roles("USER");
 	}
 
