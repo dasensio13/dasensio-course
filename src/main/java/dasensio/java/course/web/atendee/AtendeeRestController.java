@@ -20,7 +20,7 @@ import dasensio.java.course.domain.atendee.Atendee;
 import dasensio.java.course.service.atendee.IAtendeeService;
 
 @RestController
-@RequestMapping(value = "atendee")
+@RequestMapping(value = "rest/atendee")
 public class AtendeeRestController {
 
 	@Autowired

@@ -1,17 +1,15 @@
 package dasensio.java.course;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-//@SpringBootApplication
-@Configuration
-@EnableAutoConfiguration
-@ComponentScan
+import dasensio.java.course.config.SecurityConfig;
+
+@SpringBootApplication
 public class CourseApplication {
 
 	public static void main(final String[] args) {
-		SpringApplication.run(CourseApplication.class, args);
+		SpringApplication app = new SpringApplication(SecurityConfig.class, CourseApplication.class);
+		app.run(args);
 	}
 }
