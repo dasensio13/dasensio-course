@@ -1,4 +1,4 @@
-package dasensio.java.course.web.atendee;
+package dasensio.java.course.web.attendee;
 
 import javax.validation.Valid;
 
@@ -10,27 +10,28 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import dasensio.java.course.domain.atendee.Atendee;
-import dasensio.java.course.service.atendee.IAtendeeService;
+import dasensio.java.course.domain.attendee.Attendee;
+import dasensio.java.course.service.attendee.IAttendeeService;
 
 @Controller
-@RequestMapping(value = "atendee")
-public class AtendeeController {
+@RequestMapping(value = "attendee")
+public class AttendeeController {
 
 	@Autowired
-	private IAtendeeService atendeeService;
+	private IAttendeeService attendeeService;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String findAll(final Model model) {
-		model.addAttribute("atendees", atendeeService.getAtendees());
-		model.addAttribute("atendeeForm", new Atendee());
+		model.addAttribute("attendees", attendeeService.getAttendees());
+		model.addAttribute("attendeeForm", new Attendee());
 		return "index";
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String create(@ModelAttribute("atendeeForm") @Valid final Atendee atendee, final BindingResult result,
+	public String create(@ModelAttribute("attendeeForm") @Valid final Attendee attendee, final BindingResult result,
 			final Model model) {
-		atendeeService.create(atendee);
+		// TODO: validate entity here, show errors in form and delete @Valid
+		attendeeService.create(attendee);
 		return findAll(model);
 	}
 

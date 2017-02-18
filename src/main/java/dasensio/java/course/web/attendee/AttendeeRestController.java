@@ -1,9 +1,7 @@
-package dasensio.java.course.web.atendee;
+package dasensio.java.course.web.attendee;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,42 +12,39 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.util.UriComponentsBuilder;
 
-import dasensio.java.course.domain.atendee.Atendee;
-import dasensio.java.course.service.atendee.IAtendeeService;
+import dasensio.java.course.domain.attendee.Attendee;
+import dasensio.java.course.service.attendee.IAttendeeService;
 
 @RestController
-@RequestMapping(value = "rest/atendee")
-public class AtendeeRestController {
+@RequestMapping(value = "rest/attendee")
+public class AttendeeRestController {
 
 	@Autowired
-	private IAtendeeService atendeeService;
+	private IAttendeeService attendeeService;
 
 	@RequestMapping(method = RequestMethod.GET)
-	public List<Atendee> findAll(final HttpServletRequest request, final UriComponentsBuilder uriBuilder,
-			final HttpServletResponse response) {
-		return atendeeService.getAtendees();
+	public List<Attendee> findAll() {
+		return attendeeService.getAttendees();
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
-	public void create(@RequestBody @Valid final Atendee atendee, final UriComponentsBuilder uriBuilder,
-			final HttpServletResponse response) {
-		atendeeService.create(atendee);
+	public void create(@RequestBody @Valid final Attendee attendee) {
+		attendeeService.create(attendee);
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	// TODO: PATCH + company as second parameter
 	@ResponseStatus(HttpStatus.OK)
-	public void update(@PathVariable("id") final long id, @RequestBody @Valid final Atendee atendee) {
-		atendeeService.updateCompany(id, atendee.getCompany());
+	public void update(@PathVariable("id") final long id, @RequestBody @Valid final Attendee attendee) {
+		attendeeService.updateCompany(id, attendee.getCompany());
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable("id") final long id) {
-		atendeeService.delete(id);
+		attendeeService.delete(id);
 	}
 
 }

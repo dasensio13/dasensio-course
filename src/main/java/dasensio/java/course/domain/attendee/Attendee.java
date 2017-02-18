@@ -1,4 +1,4 @@
-package dasensio.java.course.domain.atendee;
+package dasensio.java.course.domain.attendee;
 
 import java.io.Serializable;
 
@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @XmlRootElement
-public class Atendee implements Serializable {
+public class Attendee implements Serializable {
 
 	private static final long serialVersionUID = 763751646466760435L;
 

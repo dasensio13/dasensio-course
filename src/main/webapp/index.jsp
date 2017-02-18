@@ -6,17 +6,18 @@
 <html lang="en">
 
 <body>
-	<h1>Atendees</h1>
+	<h1>Attendees list</h1>
 	<ul>
-		<c:forEach items="${atendees}" var="at">
+		<c:forEach items="${attendees}" var="at">
 			<li>${at.name} ${at.lastname} (${at.company})</li>
 		</c:forEach>
 	</ul>
-	<c:if test="${empty atendees}">
-		<p>No atendees found<p>
+	<c:if test="${empty attendees}">
+		<p>No attendees found<p>
 	</c:if>
 	<h1>Form</h1>
-	<form:form method="post" modelAttribute="atendeeForm">
+	<form:form method="post" modelAttribute="attendeeForm">
+		<form:errors />
 		<p>
 		<label for="name">Name:</label>
 		<form:input path="name" type="text" id="name" placeholder="Name" />
@@ -26,7 +27,7 @@
 		<form:input path="lastname" type="text" id="lastname" placeholder="Last Name" />
 		</p>
 		<p>
-		<label for="company">company:</label>
+		<label for="company">Company:</label>
 		<form:input path="company" type="text" id="company" placeholder="company" />
 		</p>
 		<input type="submit" />
